@@ -1,4 +1,9 @@
+# aula 23/02 - inicio de pytest
 import math
+
+
+class ExcecaoNaoEhEquacaoSegundoGrau(Exception):
+    pass
 
 
 def calcular_delta(a, b, c):
@@ -6,6 +11,8 @@ def calcular_delta(a, b, c):
 
 
 def calcular_raizes(a, b, c):
+    if a == 0:
+        raise ExcecaoNaoEhEquacaoSegundoGrau()
     delta = calcular_delta(a, b, c)
     if delta == 0:
         raiz = -b / (2 * a)
